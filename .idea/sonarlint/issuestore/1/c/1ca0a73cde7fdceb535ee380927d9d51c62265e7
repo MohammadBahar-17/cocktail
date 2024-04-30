@@ -1,0 +1,11 @@
+
+m	java:S106"+Replace this use of System.out by a logger.(‰ÁİÖ8ëŸ•¶ğ1J$0c6f63f0-7366-43ae-8ddb-19b40bc7d7a2
+l	java:S106""+Replace this use of System.out by a logger.(ñ÷8ìŸ•¶ğ1J$db9f5bd4-b2cc-4cc5-8062-361687f65bde
+r	java:S106>"+Replace this use of System.out by a logger.(ù©¨îûÿÿÿÿ8ñŸ•¶ğ1J$6b3a3639-71e1-420d-802a-336eede22c28
+
+java:S1659d"GDeclare "totalGreen" and all following declarations on a separate line.(ŠØ¿Äøÿÿÿÿ8ïŸ•¶ğ1J$084f0faf-15a5-4290-9b7d-6be7cc41f2c8
+Œ
+java:S6201}"DReplace this instanceof check and cast with 'instanceof Fruit fruit'(¹ÿıœÿÿÿÿÿ8ñŸ•¶ğ1J$13e68569-a5aa-4e08-a256-464ecb0fefc9
+s	java:S106„"+Replace this use of System.out by a logger.(£ó¹Šÿÿÿÿÿ8ñŸ•¶ğ1J$939641fb-3a43-485c-a335-2beea3551cc7
+s	java:S106‡"+Replace this use of System.out by a logger.(¤ş¹¶øÿÿÿÿ8ñŸ•¶ğ1J$f1fa1ac4-9782-43a4-a3fc-367b61c1c5da
+s	java:S106Š"+Replace this use of System.out by a logger.(Öæí¥ùÿÿÿÿ8ƒÂ–¶ğ1J$e8284e20-918b-49c3-b10e-895eef56b075

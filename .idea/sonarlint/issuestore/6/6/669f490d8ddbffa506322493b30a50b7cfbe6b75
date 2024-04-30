@@ -1,0 +1,8 @@
+
+m	java:S106"+Replace this use of System.out by a logger.(¤³æ¤8¸«¶ğ1J$74755e5d-bc85-4905-9e22-f5827d8bc5d9
+m	java:S106%"+Replace this use of System.out by a logger.(Ãæ‘Å8‚¸«¶ğ1J$b6204bd0-7ab2-42ad-8b86-898e05a90155
+L	java:S106-"+Replace this use of System.out by a logger.(ı™øøÿÿÿÿ8ø­¶ğ1
+w
+java:S1128"4Remove this unused import 'java.util.logging.Level'.(…µÛ¶8²ñ«¶ğ1J$b727915c-15f4-48de-8f1e-ef485068af12
+x
+java:S1128	"5Remove this unused import 'java.util.logging.Logger'.(ƒ¥óš8²ñ«¶ğ1J$551805fd-1d06-45fd-8455-4bfd406b71cc
