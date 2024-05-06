@@ -11,7 +11,8 @@ package com.mycompany.cocktail;
 public class Cup {
     private  double capacity;
     private  Contents contents;
-        public Cup(double capacity) {
+    
+    public Cup(double capacity) {
         this.contents = new Contents();
         this.capacity = capacity;
     }
@@ -21,8 +22,9 @@ public class Cup {
     }
 
     public Contents getContents() {
-        return contents;
+        return this.contents;
     }
+    
     public  class Contents {
         private double calories;
         private RGBColor color;
@@ -52,7 +54,7 @@ public class Cup {
             return volume;
         }
     }
-      public void getInfo() {
+    public void getInfo() {
         System.out.println("[Cup contents]");
         System.out.println("- Total capacity: " + capacity);
         System.out.println("- Mixture volume: " + contents.getVolume());
