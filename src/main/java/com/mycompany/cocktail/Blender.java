@@ -68,7 +68,7 @@ public class Blender {
             throw new CupsOverFlowException();
 
         }
-
+    
         Cup.Contents contents = cup.getContents();
         contents.setCalories(mixture.getCalories());
         contents.setColor(mixture.getColor());
@@ -91,8 +91,11 @@ public class Blender {
         return total;
     }
 
-    public List<Ingredient> getIngredients() {
-        return ingredients;
+    public void getIngredients() {
+        for(Ingredient ingredient : ingredients ){
+            System.out.println(ingredient);
+        }
+       // return ingredients;
     }
 
     public RGBColor getColor() {
@@ -112,7 +115,7 @@ public class Blender {
         }
 
         if (totalTangibleIngredients == 0) {
-            return new RGBColor(0, 0, 0);
+            return new RGBColor(255, 255, 255);
         }
 
         int avgRed = totalRed / totalTangibleIngredients;
@@ -124,16 +127,21 @@ public class Blender {
     private double getVolume(Ingredient ingredient) {
         if (ingredient instanceof Fruit) {
            return ((Fruit) ingredient).getVolume();     
-        } else {
-            return 0; 
+        } else if (ingredient instanceof Milk) {
+            return ((Milk) ingredient).getVolume();
+        }
+        else {
+            return 0;
         }
     }
     public void getInfo(){
         System.out.println("[blender Info]");
+        
+        getIngredients();
 
-        for(Ingredient ingredient : ingredients ){
-            System.out.println(ingredient);
-        }
+//        for(Ingredient ingredient : ingredients ){
+//            System.out.println(ingredient);
+//        }
 
         System.out.println("Total Calories = "+totalCalories()); 
     }
