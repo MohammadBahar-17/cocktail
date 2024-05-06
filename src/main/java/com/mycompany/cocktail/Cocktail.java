@@ -63,7 +63,7 @@ public class Cocktail {
                    int caloriess=scanner.nextInt();
                    System.out.println("entter your volume (ml)");
                    int volumee=scanner.nextInt();
-                    ingredient = new Fruit("milk",caloriess,volumee , white);
+                   ingredient = new Milk("milk",caloriess,volumee , white);
                      try {
                         blender.addIngredient(ingredient);
                     } catch (BlenderOverFlowException ex) {
