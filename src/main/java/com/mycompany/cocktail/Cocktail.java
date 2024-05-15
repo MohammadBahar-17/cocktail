@@ -15,6 +15,7 @@ import java.util.Scanner;
  */
 public class Cocktail {
     public static void main(String[] args) {
+        /*
         RGBColor red = new RGBColor(255, 0, 0);
         RGBColor green = new RGBColor(0, 255, 0);
         RGBColor yellow = new RGBColor(0, 0, 255);
@@ -95,7 +96,9 @@ public class Cocktail {
            
         blender.getInfo();
         cup.getInfo();
+*/
     }
+
 }
 
 

@@ -29,6 +29,11 @@ public class Blender {
             throw new BlenderOverFlowException();
         }
     }
+    public void removeIngredient(Ingredient ingredient){
+        
+        ingredients.remove(ingredient);
+         System.out.println(ingredient.getName()+" removed from blender");
+    }
 
     public void blend() {
         System.out.println("Whoops I just pressed the Red button to blend!");
@@ -75,6 +80,16 @@ public class Blender {
         contents.setVolume(mixture.getVolume());
     }
 
+    public void setCapacity(double capacity) {
+        this.capacity = capacity;
+    }
+
+    public double getCapacity() {
+        return capacity;
+    }
+    
+    
+
     public double totalCalories() {
         double total = 0;
         for (Ingredient ingredient : ingredients) {
@@ -91,10 +106,14 @@ public class Blender {
         return total;
     }
 
-    public void getIngredients() {
+    public String getIngredients() {
+        String ings ="";
         for(Ingredient ingredient : ingredients ){
-            System.out.println(ingredient);
+            ings+= ingredient; 
+            //System.out.println(ingredient);
+            
         }
+        return ings;
        // return ingredients;
     }
 
@@ -134,16 +153,19 @@ public class Blender {
             return 0;
         }
     }
-    public void getInfo(){
+    public String getInfo(){
+        String info = "blender Info";
+       
         System.out.println("[blender Info]");
         
-        getIngredients();
+        info+=getIngredients();
 
 //        for(Ingredient ingredient : ingredients ){
 //            System.out.println(ingredient);
 //        }
-
-        System.out.println("Total Calories = "+totalCalories()); 
+        info+= "Total Calories = "+totalCalories();
+        return info;
+       // System.out.println("Total Calories = "+totalCalories()); 
     }
     
 }

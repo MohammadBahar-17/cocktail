@@ -24,6 +24,11 @@ public class Cup {
     public Contents getContents() {
         return this.contents;
     }
+
+    public void setCapacity(double capacity) {
+        this.capacity = capacity;
+    }
+    
     
     public  class Contents {
         private double calories;
@@ -54,12 +59,12 @@ public class Cup {
             return volume;
         }
     }
-    public void getInfo() {
-        System.out.println("[Cup contents]");
-        System.out.println("- Total capacity: " + capacity);
-        System.out.println("- Mixture volume: " + contents.getVolume());
-        System.out.println("- Mixture calories: " + contents.getCalories());
-        System.out.println("- Mixture color: " + contents.getColor());
+    public String getInfo() {
+       return ("[Cup contents]")+
+        ("- Total capacity: " + capacity)+
+        ("- Mixture volume: " + contents.getVolume())+
+       ("- Mixture calories: " + contents.getCalories())+
+       ("- Mixture color: " + contents.getColor());
     }
 
 
