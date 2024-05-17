@@ -13,6 +13,8 @@ import javax.swing.JOptionPane;
  */
 public class CocktailGUI extends javax.swing.JFrame {
 ArrayList<Ingredient>addedIngredients=new ArrayList();
+      
+
     
     /**
      * Creates new form CocktailGUI
@@ -22,20 +24,25 @@ ArrayList<Ingredient>addedIngredients=new ArrayList();
         initComponents();
         this.blenderCapacity = Double.parseDouble(bsize.getText());
         this.cupCapacity = Double.parseDouble(csize.getText());
-        this.blender = new Blender(blenderCapacity);
+        this.filelogger=new FileLogger("log.log");
+        this.blender = new Blender(blenderCapacity,filelogger);
         this.cup=new Cup(cupCapacity);
         pour.setEnabled(false);
         blend.setEnabled(false);
+        
+        
     }
+     Logger filelogger;
      Cup cup ;
      double blenderCapacity;
      double cupCapacity;
      Blender blender;
      Ingredient ingredient ;
-        RGBColor red = new RGBColor(255, 0, 0);
-        RGBColor green = new RGBColor(0, 255, 0);
-        RGBColor yellow = new RGBColor(0, 0, 255);
-        RGBColor white = new RGBColor(255, 255, 255);
+     RGBColor red = new RGBColor(255, 0, 0);
+     RGBColor green = new RGBColor(0, 255, 0);
+     RGBColor yellow = new RGBColor(0, 0, 255);
+     RGBColor white = new RGBColor(255, 255, 255);
+    
      
 
     /**

@@ -14,16 +14,19 @@ import java.util.List;
 public class Blender {
     protected List<Ingredient> ingredients;
     private double capacity;
+    private Logger logger;
 
-    public Blender(double capacity) {
+    public Blender(double capacity,Logger logger) {
         this.capacity = capacity;
         ingredients = new ArrayList<>();
+        this.logger=logger;
     }
 
     public void addIngredient(Ingredient ingredient) throws BlenderOverFlowException {
         if (totalVolume()+getVolume(ingredient)<=capacity) {
             ingredients.add(ingredient);
             System.out.println(ingredient.getName()+" added to blender");
+            this.logger.log(ingredient.getName()+" added to blender");
         }
         else {
             throw new BlenderOverFlowException();
@@ -33,6 +36,7 @@ public class Blender {
 
     public void blend() {
         System.out.println("Whoops I just pressed the Red button to blend!");
+        this.logger.log("Blendig ......");
 
         double blendVolume = totalVolume();
         double blendCalories = totalCalories();
@@ -61,6 +65,7 @@ public class Blender {
 
         if (!isFullyMixed()) {
             System.out.println(" what are you trying to do. Have you pressed the Red button?");
+            
             return;
         }
         Mixture mixture = (Mixture) ingredients.getFirst();
@@ -74,6 +79,7 @@ public class Blender {
         contents.setCalories(mixture.getCalories());
         contents.setColor(mixture.getColor());
         contents.setVolume(mixture.getVolume());
+        this.logger.log("Pouring .....");
     }
 
     public void setCapacity(double capacity) {
@@ -153,7 +159,6 @@ public class Blender {
         info+=getIngredients();
         info+= "Total Calories = "+totalCalories();
         return info;
-       
     }
     
 }
