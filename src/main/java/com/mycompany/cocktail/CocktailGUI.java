@@ -57,6 +57,7 @@ ArrayList<Ingredient>addedIngredients=new ArrayList();
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -70,37 +71,57 @@ ArrayList<Ingredient>addedIngredients=new ArrayList();
         csize = new javax.swing.JTextField();
         blend = new javax.swing.JButton();
         pour = new javax.swing.JButton();
-        remove = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+
+        jLabel5.setText("jLabel5");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(51, 255, 51));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Vivaldi", 1, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setForeground(new java.awt.Color(65, 105, 225));
         jLabel1.setText("Welcome ");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(273, 0, 147, -1));
 
         jLabel2.setFont(new java.awt.Font("Blackadder ITC", 1, 36)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setForeground(new java.awt.Color(65, 105, 225));
         jLabel2.setText("select your ingrediants ");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(135, 127, 314, -1));
 
         ings.setBorder(javax.swing.BorderFactory.createTitledBorder("Ingrediants\n"));
+        ings.setForeground(new java.awt.Color(51, 255, 0));
         ings.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Apple (60 cal , 15 ml)", "Banana (80 cal , 20ml)", "Orange ( 40 cal , 40ml)", "Milk (200 cal , 200 ml)", "Sugar (300  cal , One Cup)" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
+        ings.setSelectionBackground(new java.awt.Color(255, 255, 255));
+        ings.setSelectionForeground(new java.awt.Color(204, 204, 204));
         jScrollPane1.setViewportView(ings);
 
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 178, 209, 148));
+
         sings.setBorder(javax.swing.BorderFactory.createTitledBorder("Selected Ingrediants\n"));
+        sings.setForeground(new java.awt.Color(204, 204, 204));
+        sings.setSelectionBackground(new java.awt.Color(0, 0, 0));
         jScrollPane2.setViewportView(sings);
 
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(355, 178, 200, 148));
+
+        select.setForeground(new java.awt.Color(0, 128, 0));
         select.setText("Select");
         select.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 selectActionPerformed(evt);
             }
         });
+        getContentPane().add(select, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 240, -1, -1));
 
+        jLabel3.setForeground(new java.awt.Color(54, 69, 79));
         jLabel3.setText("Blender's Size");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 77, -1, 22));
 
         bsize.setText("1000");
         bsize.addActionListener(new java.awt.event.ActionListener() {
@@ -108,8 +129,11 @@ ArrayList<Ingredient>addedIngredients=new ArrayList();
                 bsizeActionPerformed(evt);
             }
         });
+        getContentPane().add(bsize, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 77, 71, -1));
 
+        jLabel4.setForeground(new java.awt.Color(54, 69, 79));
         jLabel4.setText("Cup's Size");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(363, 80, -1, -1));
 
         csize.setText("200");
         csize.addActionListener(new java.awt.event.ActionListener() {
@@ -117,100 +141,29 @@ ArrayList<Ingredient>addedIngredients=new ArrayList();
                 csizeActionPerformed(evt);
             }
         });
+        getContentPane().add(csize, new org.netbeans.lib.awtextra.AbsoluteConstraints(447, 77, 71, -1));
 
+        blend.setForeground(new java.awt.Color(0, 128, 0));
         blend.setText("Blend");
         blend.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 blendActionPerformed(evt);
             }
         });
+        getContentPane().add(blend, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 358, -1, -1));
 
+        pour.setForeground(new java.awt.Color(0, 0, 255));
         pour.setText("Pour");
         pour.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 pourActionPerformed(evt);
             }
         });
+        getContentPane().add(pour, new org.netbeans.lib.awtextra.AbsoluteConstraints(355, 358, -1, -1));
 
-        remove.setText("Remove");
-        remove.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                removeActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(226, 226, 226))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel3)
-                .addGap(32, 32, 32)
-                .addComponent(bsize, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel4)
-                .addGap(31, 31, 31)
-                .addComponent(csize, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(128, 128, 128))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(135, 135, 135)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(blend))
-                        .addGap(45, 45, 45)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(101, 101, 101)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(pour)
-                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(select))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(remove)))
-                .addContainerGap(9, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel1)
-                .addGap(32, 32, 32)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bsize, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4)
-                    .addComponent(csize, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
-                .addComponent(jLabel2)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(70, 70, 70)
-                                .addComponent(select))
-                            .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(32, 32, 32))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(remove)
-                        .addGap(87, 87, 87)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(blend)
-                    .addComponent(pour))
-                .addContainerGap(109, Short.MAX_VALUE))
-        );
+        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\bahar\\Desktop\\cok2.jpg")); // NOI18N
+        jLabel6.setText("jLabel6");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 670, 510));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -307,17 +260,6 @@ pour.setEnabled(true);
 
     }//GEN-LAST:event_csizeActionPerformed
 
-    private void removeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeActionPerformed
-    int index=sings.getSelectedIndex();
-        if (index!=-1) {
-            addedIngredients.remove(index);
-            blender.removeIngredient(ingredient);
-            display();
-        }
-
-
-    }//GEN-LAST:event_removeActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -338,10 +280,11 @@ pour.setEnabled(true);
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton pour;
-    private javax.swing.JButton remove;
     private javax.swing.JButton select;
     private javax.swing.JList<String> sings;
     // End of variables declaration//GEN-END:variables

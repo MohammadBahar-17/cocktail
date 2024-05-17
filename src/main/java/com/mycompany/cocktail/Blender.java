@@ -29,11 +29,7 @@ public class Blender {
             throw new BlenderOverFlowException();
         }
     }
-    public void removeIngredient(Ingredient ingredient){
-        
-        ingredients.remove(ingredient);
-         System.out.println(ingredient.getName()+" removed from blender");
-    }
+  
 
     public void blend() {
         System.out.println("Whoops I just pressed the Red button to blend!");
@@ -110,11 +106,9 @@ public class Blender {
         String ings ="";
         for(Ingredient ingredient : ingredients ){
             ings+= ingredient; 
-            //System.out.println(ingredient);
-            
         }
         return ings;
-       // return ingredients;
+     
     }
 
     public RGBColor getColor() {
@@ -155,17 +149,11 @@ public class Blender {
     }
     public String getInfo(){
         String info = "blender Info";
-       
         System.out.println("[blender Info]");
-        
         info+=getIngredients();
-
-//        for(Ingredient ingredient : ingredients ){
-//            System.out.println(ingredient);
-//        }
         info+= "Total Calories = "+totalCalories();
         return info;
-       // System.out.println("Total Calories = "+totalCalories()); 
+       
     }
     
 }
