@@ -168,7 +168,7 @@ ArrayList<Ingredient>addedIngredients=new ArrayList();
         });
         getContentPane().add(pour, new org.netbeans.lib.awtextra.AbsoluteConstraints(355, 358, -1, -1));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\bahar\\Desktop\\cok2.jpg")); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(System.getProperty("user.dir")+"\\src\\main\\java\\Images\\cok2.JPG"));
         jLabel6.setText("jLabel6");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 670, 510));
 

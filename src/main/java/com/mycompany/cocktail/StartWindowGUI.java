@@ -4,6 +4,7 @@
  */
 package com.mycompany.cocktail;
 
+
 /**
  *
  * @author bahar
@@ -68,7 +69,7 @@ public class StartWindowGUI extends javax.swing.JFrame {
         jLabel1.setText("Welcome to my Cocktail shop");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 35, -1, 20));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\bahar\\Desktop\\cocktail1.jpg")); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(System.getProperty("user.dir")+"\\src\\main\\java\\Images\\cocktail1.JPG"));
         jLabel4.setText("jLabel4");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 320));
 
