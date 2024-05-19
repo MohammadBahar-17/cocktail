@@ -32,11 +32,12 @@ public class Blender {
             throw new BlenderOverFlowException();
         }
     }
+    
   
 
     public void blend() {
         System.out.println("Whoops I just pressed the Red button to blend!");
-        this.logger.log("Blendig ......");
+       
 
         double blendVolume = totalVolume();
         double blendCalories = totalCalories();
@@ -48,6 +49,8 @@ public class Blender {
         if (blendVolume != 0) {
             ingredients.add(new Mixture(blendVolume, blendColor, blendCalories));
         }
+        this.logger.log("Blendig ......");
+        this.logger.log(getInfo());
     }
 
     private boolean isFullyMixed() {
@@ -80,6 +83,7 @@ public class Blender {
         contents.setColor(mixture.getColor());
         contents.setVolume(mixture.getVolume());
         this.logger.log("Pouring .....");
+        this.logger.log(cup.getInfo());
     }
 
     public void setCapacity(double capacity) {
@@ -160,5 +164,10 @@ public class Blender {
         info+= "Total Calories = "+totalCalories();
         return info;
     }
+    public void exit(){
+         this.logger.log("Exiting.......");
+         System.exit(0);
+    }
+   
     
 }

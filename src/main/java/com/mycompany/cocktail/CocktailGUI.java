@@ -13,6 +13,8 @@ import javax.swing.JOptionPane;
  */
 public class CocktailGUI extends javax.swing.JFrame {
 ArrayList<Ingredient>addedIngredients=new ArrayList();
+
+
       
 
     
@@ -24,15 +26,16 @@ ArrayList<Ingredient>addedIngredients=new ArrayList();
         initComponents();
         this.blenderCapacity = Double.parseDouble(bsize.getText());
         this.cupCapacity = Double.parseDouble(csize.getText());
-        this.filelogger=new FileLogger("log.log");
+        this.ln=loggername.getText();  
+        this.filelogger=new FileLogger(ln);
         this.blender = new Blender(blenderCapacity,filelogger);
         this.cup=new Cup(cupCapacity);
         pour.setEnabled(false);
         blend.setEnabled(false);
-        
-        
+        select.setEnabled(false);
     }
      Logger filelogger;
+     String ln;
      Cup cup ;
      double blenderCapacity;
      double cupCapacity;
@@ -56,11 +59,14 @@ ArrayList<Ingredient>addedIngredients=new ArrayList();
         for (int i = 0; i < addedIngredients.size(); i++) {
             Ingredient ing=addedIngredients.get(i);
             ListData[i]=ing.getName();
-            
         }
         sings.setListData(ListData);
     
 }
+      
+  
+      
+ 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -78,6 +84,9 @@ ArrayList<Ingredient>addedIngredients=new ArrayList();
         csize = new javax.swing.JTextField();
         blend = new javax.swing.JButton();
         pour = new javax.swing.JButton();
+        exit = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        loggername = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
 
         jLabel5.setText("jLabel5");
@@ -95,7 +104,7 @@ ArrayList<Ingredient>addedIngredients=new ArrayList();
         jLabel2.setFont(new java.awt.Font("Blackadder ITC", 1, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(65, 105, 225));
         jLabel2.setText("select your ingrediants ");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(135, 127, 314, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 170, 314, -1));
 
         ings.setBorder(javax.swing.BorderFactory.createTitledBorder("Ingrediants\n"));
         ings.setForeground(new java.awt.Color(51, 255, 0));
@@ -108,14 +117,19 @@ ArrayList<Ingredient>addedIngredients=new ArrayList();
         ings.setSelectionForeground(new java.awt.Color(204, 204, 204));
         jScrollPane1.setViewportView(ings);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 178, 209, 148));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 209, 148));
 
         sings.setBorder(javax.swing.BorderFactory.createTitledBorder("Selected Ingrediants\n"));
         sings.setForeground(new java.awt.Color(204, 204, 204));
         sings.setSelectionBackground(new java.awt.Color(0, 0, 0));
+        sings.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                singsValueChanged(evt);
+            }
+        });
         jScrollPane2.setViewportView(sings);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(355, 178, 200, 148));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 220, 200, 148));
 
         select.setForeground(new java.awt.Color(0, 128, 0));
         select.setText("Select");
@@ -124,7 +138,7 @@ ArrayList<Ingredient>addedIngredients=new ArrayList();
                 selectActionPerformed(evt);
             }
         });
-        getContentPane().add(select, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 240, -1, -1));
+        getContentPane().add(select, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 280, -1, -1));
 
         jLabel3.setForeground(new java.awt.Color(54, 69, 79));
         jLabel3.setText("Blender's Size");
@@ -157,7 +171,7 @@ ArrayList<Ingredient>addedIngredients=new ArrayList();
                 blendActionPerformed(evt);
             }
         });
-        getContentPane().add(blend, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 358, -1, -1));
+        getContentPane().add(blend, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, -1, -1));
 
         pour.setForeground(new java.awt.Color(0, 0, 255));
         pour.setText("Pour");
@@ -166,7 +180,26 @@ ArrayList<Ingredient>addedIngredients=new ArrayList();
                 pourActionPerformed(evt);
             }
         });
-        getContentPane().add(pour, new org.netbeans.lib.awtextra.AbsoluteConstraints(355, 358, -1, -1));
+        getContentPane().add(pour, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 400, -1, -1));
+
+        exit.setForeground(new java.awt.Color(255, 0, 0));
+        exit.setText("Exit");
+        exit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exitActionPerformed(evt);
+            }
+        });
+        getContentPane().add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 450, -1, -1));
+
+        jLabel7.setText("Logger's File Name");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 136, -1, 20));
+
+        loggername.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loggernameActionPerformed(evt);
+            }
+        });
+        getContentPane().add(loggername, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 130, 130, 30));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(System.getProperty("user.dir")+"\\src\\main\\java\\Images\\cok2.JPG"));
         jLabel6.setText("jLabel6");
@@ -180,7 +213,7 @@ ArrayList<Ingredient>addedIngredients=new ArrayList();
         int index=ings.getSelectedIndex();
         if (index!=-1) {
             if(index == 4){
-                // create sugar ingredient
+                
                 ingredient = new Sugar("Sugar",300);
                  try {
                       blender.addIngredient(ingredient);
@@ -248,24 +281,44 @@ ArrayList<Ingredient>addedIngredients=new ArrayList();
             System.out.println(ex.getMessage());
         }
             JOptionPane.showMessageDialog(this, cup.getInfo());
+            
     }//GEN-LAST:event_pourActionPerformed
 
     private void blendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_blendActionPerformed
 
-blender.blend();
-JOptionPane.showMessageDialog(this, blender.getInfo());
-pour.setEnabled(true);
+            blender.blend();
+            JOptionPane.showMessageDialog(this, blender.getInfo());
+            pour.setEnabled(true);
     }//GEN-LAST:event_blendActionPerformed
 
     private void bsizeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bsizeActionPerformed
-        blender.setCapacity(Double.parseDouble(bsize.getText()));
-        System.out.println("blender"+blender.getCapacity());
+            blender.setCapacity(Double.parseDouble(bsize.getText()));
+            System.out.println("blender"+blender.getCapacity());
     }//GEN-LAST:event_bsizeActionPerformed
 
     private void csizeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_csizeActionPerformed
-     cup.setCapacity(Double.parseDouble(csize.getText()));
+            cup.setCapacity(Double.parseDouble(csize.getText()));
 
     }//GEN-LAST:event_csizeActionPerformed
+
+    private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
+             blender.exit();
+    }//GEN-LAST:event_exitActionPerformed
+
+    private void loggernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loggernameActionPerformed
+        if (loggername.getText().endsWith(".log")) {
+             filelogger.setFilePath(loggername.getText());
+             select.setEnabled(true);
+        }
+        else    {
+            JOptionPane.showMessageDialog(this, "Please Enter (FileName.log)");    
+        }
+       
+    }//GEN-LAST:event_loggernameActionPerformed
+
+    private void singsValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_singsValueChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_singsValueChanged
 
     /**
      * @param args the command line arguments
@@ -282,6 +335,7 @@ pour.setEnabled(true);
     private javax.swing.JButton blend;
     private javax.swing.JTextField bsize;
     private javax.swing.JTextField csize;
+    private javax.swing.JButton exit;
     private javax.swing.JList<String> ings;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -289,8 +343,10 @@ pour.setEnabled(true);
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextField loggername;
     private javax.swing.JButton pour;
     private javax.swing.JButton select;
     private javax.swing.JList<String> sings;

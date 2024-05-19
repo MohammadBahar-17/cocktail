@@ -10,4 +10,7 @@ package com.mycompany.cocktail;
  */
 public interface Logger {
     public void log(String msg);
+    public void setFilePath(String filePath);
+      
+    
 }

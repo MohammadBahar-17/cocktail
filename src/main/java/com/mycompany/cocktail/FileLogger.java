@@ -17,7 +17,13 @@ public class FileLogger implements Logger{
     public FileLogger(String filePath) {
         this.filePath = filePath;
     }
-        
+
+ 
+    public void setFilePath(String filePath) {
+        this.filePath = filePath;
+    }
+
+  
         
         
     @Override
