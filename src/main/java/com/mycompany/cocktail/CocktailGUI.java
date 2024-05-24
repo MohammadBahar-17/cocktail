@@ -26,8 +26,8 @@ ArrayList<Ingredient>addedIngredients=new ArrayList();
         initComponents();
         this.blenderCapacity = Double.parseDouble(bsize.getText());
         this.cupCapacity = Double.parseDouble(csize.getText());
-        this.ln=loggername.getText();  
-        this.filelogger=new FileLogger(ln);
+        this.filepath=loggername.getText();  
+        this.filelogger=new FileLogger(filepath);
         this.blender = new Blender(blenderCapacity,filelogger);
         this.cup=new Cup(cupCapacity);
         pour.setEnabled(false);
@@ -35,7 +35,7 @@ ArrayList<Ingredient>addedIngredients=new ArrayList();
         select.setEnabled(false);
     }
      Logger filelogger;
-     String ln;
+     String filepath;
      Cup cup ;
      double blenderCapacity;
      double cupCapacity;
@@ -194,6 +194,7 @@ ArrayList<Ingredient>addedIngredients=new ArrayList();
         jLabel7.setText("Logger's File Name");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 136, -1, 20));
 
+        loggername.setText("log.log");
         loggername.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 loggernameActionPerformed(evt);
