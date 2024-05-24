@@ -12,10 +12,6 @@ public class Fruit extends Ingredient implements TangibleIngredient {
     private double volume;
     private RGBColor color;
 
-   
-    
-
-
     public Fruit(String name, int calories, double volume, RGBColor color) {
         super(name, calories);
         this.volume = volume;

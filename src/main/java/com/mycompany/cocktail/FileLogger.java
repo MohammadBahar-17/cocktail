@@ -11,7 +11,7 @@ import java.io.IOException;
  *
  * @author bahar
  */
-public class FileLogger implements Logger{
+ public class FileLogger implements Logger{
  private String filePath;
 
     public FileLogger(String filePath) {
@@ -19,13 +19,11 @@ public class FileLogger implements Logger{
     }
 
  
+ @Override
     public void setFilePath(String filePath) {
         this.filePath = filePath;
     }
-
-  
-        
-        
+    
     @Override
     public void log(String msg) {
         try {

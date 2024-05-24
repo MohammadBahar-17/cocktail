@@ -275,7 +275,6 @@ ArrayList<Ingredient>addedIngredients=new ArrayList();
     private void pourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pourActionPerformed
            try {
             blender.pour(cup);
-            
         }
            catch (CupsOverFlowException | EmptyBlenderException ex) {
             System.out.println(ex.getMessage());

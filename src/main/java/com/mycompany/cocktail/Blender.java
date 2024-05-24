@@ -37,8 +37,7 @@ public class Blender {
 
     public void blend() {
         System.out.println("Whoops I just pressed the Red button to blend!");
-       
-
+        
         double blendVolume = totalVolume();
         double blendCalories = totalCalories();
         RGBColor blendColor = getColor();
@@ -68,11 +67,9 @@ public class Blender {
 
         if (!isFullyMixed()) {
             System.out.println(" what are you trying to do. Have you pressed the Red button?");
-            
             return;
         }
         Mixture mixture = (Mixture) ingredients.getFirst();
-
         if (cup.getCapacity() < mixture.getVolume()) {
             throw new CupsOverFlowException();
 
